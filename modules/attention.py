@@ -4,7 +4,7 @@ import torch.functional as F
 from torch.autograd import Variable
 
 class Attention(nn.Module):
-    def __init__(self,seq_len=18,embedding_dim=1024):
+    def __init__(self,seq_len=8,embedding_dim=1024):
         super(Attention,self).__init__()
 
         self.seq_len = seq_len

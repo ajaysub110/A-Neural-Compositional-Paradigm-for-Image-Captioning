@@ -7,7 +7,7 @@ class VarLSTM(nn.Module):
 
         self.num_hidden = num_hidden
         self.depth = depth 
-        self.word_emb_dim = 2*word_emb_dim
+        self.word_emb_dim = word_emb_dim
 
         self.lstm = nn.LSTM(input_size=self.word_emb_dim,
             hidden_size=self.num_hidden,num_layers=self.depth,batch_first=True,dropout=0)
