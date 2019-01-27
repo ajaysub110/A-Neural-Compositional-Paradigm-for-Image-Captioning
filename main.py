@@ -7,7 +7,7 @@ import torch.nn as nn
 from modules import resnet
 
 def main():
-    model = resnet.resnet152(feature_extract=True)
+    model = resnet.resnet152(pretrained=True,feature_extract=True)
     print(model)
 
 if __name__ == "__main__":
