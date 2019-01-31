@@ -1,4 +1,5 @@
 # Borrowed from https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.py
+# Non max suppression not done
 
 import torch.nn as nn
 import torch.nn.functional as F
