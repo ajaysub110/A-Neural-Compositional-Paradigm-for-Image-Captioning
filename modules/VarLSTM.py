@@ -19,7 +19,6 @@ class VarLSTM(nn.Module):
             num_layers=self.num_layers,batch_first=True)
         
     def forward(self,embedded_sequence):
-        # input: (batch_size,seq_len,hidden_size)
-        # Note: Here hidden_size is equal to the embedding dimension of output
-        h_t = self.lstm(embedded_sequence) # (batch_size,seq_len,hidden_size)
+        # input: (batch_size,seq_len,embedding_dim)
+        h_t, _ = self.lstm(embedded_sequence) # (batch_size,seq_len,hidden_size)
         return h_t

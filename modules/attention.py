@@ -4,6 +4,11 @@ import torch.functional as F
 from torch.autograd import Variable
 
 class Attention(nn.Module):
+    """
+    Parameters:
+    sequence_length: Length of each sequence
+    embedding_dim: embedding dimension of input. In this case, embedding_dim == lstm_hidden_size
+    """
     def __init__(self,sequence_length,embedding_dim):
         super(Attention,self).__init__()
 
@@ -24,7 +29,8 @@ class Attention(nn.Module):
 
     def forward(self,lstm_h_t):
         # input: (batch_size,seq_len,hidden_size)
-        batch_size = lstm_h_t.shape[0]
+        batch_size = lstm_h_t.size()[0]
+        lstm_h_t = lstm_h_t.contiguous()
         lstm_h_t_flattened = lstm_h_t.view(batch_size,-1) # (batch_size,seq_len*hidden_size)
 
         alpha = self.softmax(self.fc(lstm_h_t_flattened)) # (batch_size,seq_len)
@@ -39,4 +45,4 @@ if __name__ == '__main__':
 
     lstm_h_t = Variable(torch.Tensor(4,18,300))
     out = net(lstm_h_t)
-    print(out.size())
+    print(out.size())   
