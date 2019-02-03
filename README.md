@@ -7,4 +7,4 @@ PyTorch implementation of 'A Neural Compositional Paradigm for Image Captioning'
 - [x] ResNet-152 for NP extraction
 - [x] Attention unit
 - [x] Two Level LSTM
-- [ ] Connecting Module
+- [x] Connecting Module
