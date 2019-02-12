@@ -8,3 +8,4 @@ PyTorch implementation of 'A Neural Compositional Paradigm for Image Captioning'
 - [x] Attention unit
 - [x] Two Level LSTM
 - [x] Connecting Module
+- [x] Evaluation Module
