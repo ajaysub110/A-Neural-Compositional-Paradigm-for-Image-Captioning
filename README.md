@@ -9,3 +9,5 @@ PyTorch implementation of 'A Neural Compositional Paradigm for Image Captioning'
 - [x] Two Level LSTM
 - [x] Connecting Module
 - [x] Evaluation Module
+
+**TODO**: Implement the data preprocessing and preparation as done in the paper
